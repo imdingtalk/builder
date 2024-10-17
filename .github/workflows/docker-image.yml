@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'ros2-docker-dev/Dockerfile'
+      - '.github/workflows'
       # 添加更多路径，根据你的目录结构调整
 
 jobs:
