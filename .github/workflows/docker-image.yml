@@ -16,11 +16,7 @@ jobs:
         dir: 
           - 'ros2-docker-dev'
           # 添加更多目录，根据你的情况调整
-        platform:
-          - linux/amd64
-          # - linux/arm/v6
-          # - linux/arm/v7
-          - linux/arm64
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -43,7 +39,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./${{ matrix.dir }}
-          platforms: ${{ matrix.platform }}
+          platforms: linux/amd64,linux/arm64
           file: ./${{ matrix.dir }}/Dockerfile
           push: true
           tags: |
