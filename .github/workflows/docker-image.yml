@@ -6,9 +6,6 @@ on:
       - 'ros2-docker-dev/Dockerfile'
       - '.github/workflows/docker-image.yml'
       # 添加更多路径，根据你的目录结构调整
-permissions:
-  contents: read
-  packages: write
 
 jobs:
   build-and-push:
@@ -38,6 +35,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set short SHA
+        id: vars
+        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
@@ -47,4 +48,4 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ matrix.dir }}--latest
-            ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ matrix.dir }}--${{ github.sha::7 }}
+            ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ matrix.dir }}--${{ env.SHORT_SHA }}
