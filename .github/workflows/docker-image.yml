@@ -6,7 +6,10 @@ on:
       - 'ros2-docker-dev/Dockerfile'
       - '.github/workflows/docker-image.yml'
       # 添加更多路径，根据你的目录结构调整
-
+permissions:
+  contents: read
+  packages: write
+  
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
