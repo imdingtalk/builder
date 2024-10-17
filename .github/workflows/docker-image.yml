@@ -3,7 +3,7 @@ name: Build and Push Docker Images
 on:
   push:
     paths:
-      - 'code/Dockerfile'
+      - 'ros2-docker-dev/Dockerfile'
       # 添加更多路径，根据你的目录结构调整
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         dir: 
-          - 'code'
+          - 'ros2-docker-dev'
           # 添加更多目录，根据你的情况调整
         platform:
           - linux/amd64
