@@ -1,0 +1,14 @@
+FROM python:3.11.9-slim-bullseye
+
+
+# 设置工作目录
+WORKDIR /code
+
+# 复制项目文件到镜像中
+COPY . .
+
+# 创建启动脚本
+RUN chmod +x /code/start.sh
+
+# 启动命令：执行启动脚本
+#CMD ["/code/start.sh"]
