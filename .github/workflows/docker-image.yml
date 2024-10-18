@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'ros2-docker-dev/Dockerfile'
+      - 'R5.6-EM64T'
       - '.github/workflows/docker-image.yml'
       # 添加更多路径，根据你的目录结构调整
 
@@ -15,6 +16,7 @@ jobs:
       matrix:
         dir: 
           - 'ros2-docker-dev'
+          - 'R5.6-EM64T'
           # 添加更多目录，根据你的情况调整
 
     steps:
