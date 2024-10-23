@@ -6,7 +6,7 @@ on:
       - 'ros2-docker-dev/Dockerfile'
       - 'R5.6-EM64T'
       - '.github/workflows/docker-image.yml'
-      - 'robot-learning-cl-dr'
+      - 'robot-learning-cl-dr/Dockerfile'
       # 添加更多路径，根据你的目录结构调整
 
 jobs:
