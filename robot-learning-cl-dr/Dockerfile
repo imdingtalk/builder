@@ -10,7 +10,7 @@ LABEL maintainer Cristian C Beltran-Hernandez "beltran@hlab.sys.es.osaka-u.ac.jp
 #### Use an official ROS runtime as a parent image
 
 # 
-RUN apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/3bf863cc.pub
+# RUN apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/3bf863cc.pub
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
