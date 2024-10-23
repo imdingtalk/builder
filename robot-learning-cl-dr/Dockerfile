@@ -161,7 +161,7 @@ RUN /bin/bash -c "source /opt/ros/$ROS_DISTRO/setup.bash \
     && rm -rf build \
     && catkin build -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so -DPYTHON_VERSION=3"
 
-COPY docker/bashrc /etc/bash.bashrc
+COPY bashrc /etc/bash.bashrc
 RUN chmod a+rwx /etc/bash.bashrc
 
 ENV PYTHONIOENCODING UTF-8
@@ -207,7 +207,7 @@ RUN apt update && apt-mark hold cuda-compat-10-1 libnvinfer-plugin6 libnvinfer6 
 
 RUN pip install future netifaces pandas sklearn seaborn
 
-COPY docker/gazebo-gui.ini /root/.gazebo/gui.ini
+COPY gazebo-gui.ini /root/.gazebo/gui.ini
 
 # fix TF for python3
 RUN pip3 install --extra-index-url https://rospypi.github.io/simple/ tf2_ros

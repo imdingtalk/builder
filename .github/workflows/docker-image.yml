@@ -16,8 +16,8 @@ jobs:
     strategy:
       matrix:
         dir: 
-          - 'ros2-docker-dev'
-          - 'R5.6-EM64T'
+          # - 'ros2-docker-dev'
+          # - 'R5.6-EM64T'
           - 'robot-learning-cl-dr'
           # 添加更多目录，根据你的情况调整
 
