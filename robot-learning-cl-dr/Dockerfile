@@ -12,9 +12,7 @@ LABEL maintainer Cristian C Beltran-Hernandez "beltran@hlab.sys.es.osaka-u.ac.jp
 # 
 # RUN apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/3bf863cc.pub
 # setup timezone
-RUN echo 'Etc/UTC' > /etc/timezone && \
-    ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
-    apt-get update && apt-get install -q -y tzdata 
+RUN  apt-get update && apt-get install -q -y tzdata 
 
 # setup sources.list
 RUN echo "deb http://packages.ros.org/ros/ubuntu bionic main" > /etc/apt/sources.list.d/ros1-latest.list
