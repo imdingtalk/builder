@@ -6,7 +6,7 @@ on:
       - 'ros2-docker-dev/Dockerfile'
       - 'R5.6-EM64T'
       - '.github/workflows/docker-image.yml'
-      - 'LST-AI/Dockerfile'
+      - 'vision/Dockerfile'
       # 添加更多路径，根据你的目录结构调整
 
 jobs:
@@ -16,9 +16,9 @@ jobs:
     strategy:
       matrix:
         dir: 
-          # - 'ros2-docker-dev'
+          - 'ros2-docker-dev'
+          - 'vision'
           # - 'R5.6-EM64T'
-          - 'LST-AI'
           # 添加更多目录，根据你的情况调整
 
     steps:
