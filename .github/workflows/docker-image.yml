@@ -6,7 +6,7 @@ on:
       - 'ros2-docker-dev/Dockerfile'
       - 'R5.6-EM64T'
       - '.github/workflows/docker-image.yml'
-      - 'robot-learning-cl-dr/Dockerfile'
+      - 'LST-AI/Dockerfile'
       # 添加更多路径，根据你的目录结构调整
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
         dir: 
           # - 'ros2-docker-dev'
           # - 'R5.6-EM64T'
-          - 'robot-learning-cl-dr'
+          - 'LST-AI'
           # 添加更多目录，根据你的情况调整
 
     steps:
