@@ -32,10 +32,10 @@ RUN /bin/bash -c "source /opt/mineru_venv/bin/activate && \
     pip3 install --upgrade pip && \
     wget https://gitee.com/myhloli/MinerU/raw/master/requirements-docker.txt && \
     pip3 install -r requirements-docker.txt --extra-index-url https://wheels.myhloli.com"
-    
-RUN /bin/bash -c "source /opt/mineru_venv/bin/activate && \
-    pip3 install --upgrade pip && \
-    pip3 install paddlepaddle-gpu==3.0.0b1 -i https://www.paddlepaddle.org.cn/packages/stable/cu118/"
+
+# RUN /bin/bash -c "source /opt/mineru_venv/bin/activate && \
+#     pip3 install --upgrade pip && \
+#     pip3 install paddlepaddle-gpu==3.0.0b1 -i https://www.paddlepaddle.org.cn/packages/stable/cu118/"
 
 # Copy the configuration file template and install magic-pdf latest
 RUN /bin/bash -c "wget https://gitee.com/myhloli/MinerU/raw/master/magic-pdf.template.json && \
@@ -46,8 +46,9 @@ RUN /bin/bash -c "wget https://gitee.com/myhloli/MinerU/raw/master/magic-pdf.tem
 # Download models and update the configuration file
 RUN /bin/bash -c "pip3 install modelscope && \
     wget https://gitee.com/myhloli/MinerU/raw/master/scripts/download_models.py && \
-    python3 download_models.py && \
-    sed -i 's|cpu|cuda|g' /root/magic-pdf.json"
+    python3 download_models.py"
+    
+# sed -i 's|cpu|cuda|g' /root/magic-pdf.json
 
 # Set the entry point to activate the virtual environment and run the command line tool
 ENTRYPOINT ["/bin/bash", "-c", "source /opt/mineru_venv/bin/activate && exec \"$@\"", "--"]
