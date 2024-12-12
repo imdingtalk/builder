@@ -17,8 +17,8 @@ jobs:
     strategy:
       matrix:
         dir: 
-          - 'ros2-docker-dev'
-          - 'vision'
+          # - 'ros2-docker-dev'
+          # - 'vision'
           - 'MinerU'
           # - 'R5.6-EM64T'
           # 添加更多目录，根据你的情况调整
