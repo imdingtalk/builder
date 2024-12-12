@@ -11,6 +11,8 @@ on:
       # 添加更多路径，根据你的目录结构调整
 
 jobs:
+
+
   build-and-push:
     runs-on: ubuntu-latest
 
@@ -27,6 +29,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+
+    - name: Free Disk Space (Ubuntu)
+      uses: jlumbroso/free-disk-space@main
+      with:
+        # this might remove tools that are actually needed,
+        # if set to "true" but frees about 6 GB
+        tool-cache: false
+        
+        # all of these default to true, but feel free to set to
+        # "false" if necessary for your workflow
+        android: true
+        dotnet: true
+        haskell: true
+        large-packages: true
+        swap-storage: true
       - name: Delete Unused 
         shell: bash
         run: |
@@ -43,6 +60,7 @@ jobs:
             /usr/local/share/chromium \
             /usr/local/share/powershell \
             /usr/share/dotnet \
+            /usr/local/share/boost \
             /usr/share/swift
           df -h /
 

@@ -31,7 +31,10 @@ RUN python3 -m venv /opt/mineru_venv
 RUN /bin/bash -c "source /opt/mineru_venv/bin/activate && \
     pip3 install --upgrade pip && \
     wget https://gitee.com/myhloli/MinerU/raw/master/requirements-docker.txt && \
-    pip3 install -r requirements-docker.txt --extra-index-url https://wheels.myhloli.com -i https://mirrors.aliyun.com/pypi/simple && \
+    pip3 install -r requirements-docker.txt --extra-index-url https://wheels.myhloli.com"
+    
+RUN /bin/bash -c "source /opt/mineru_venv/bin/activate && \
+    pip3 install --upgrade pip && \
     pip3 install paddlepaddle-gpu==3.0.0b1 -i https://www.paddlepaddle.org.cn/packages/stable/cu118/"
 
 # Copy the configuration file template and install magic-pdf latest
