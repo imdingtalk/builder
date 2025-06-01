@@ -8,6 +8,7 @@ on:
       - '.github/workflows/docker-image.yml'
       - 'vision/Dockerfile'
       -  'MinerU/Dockerfile'
+      - 'kuzzle-agent'
       # 添加更多路径，根据你的目录结构调整
 
 jobs:
@@ -20,7 +21,7 @@ jobs:
         dir: 
           # - 'ros2-docker-dev'
           # - 'vision'
-          - 'MinerU'
+          - 'kuzzle-agent'
           # - 'R5.6-EM64T'
           # 添加更多目录，根据你的情况调整
 
