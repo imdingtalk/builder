@@ -1,0 +1,15 @@
+*.pyc
+.mypy_cache/
+*.csv
+*.tar*
+.devcontainer
+!mongodb.conf
+__pycache__
+.ipynb_checkpoints
+.pytest_cache/
+anbox-work/*
+.vscode
+scratch/
+.python-version
+.devcontainer/
+.trader.history
