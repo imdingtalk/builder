@@ -7,7 +7,7 @@ on:
       - 'R5.6-EM64T'
       - '.github/workflows/docker-image.yml'
       - 'vision/Dockerfile'
-      -  'MinerU/Dockerfile'
+      - 'MinerU/Dockerfile'
       - 'mmr/Dockerfile'
       # 添加更多路径，根据你的目录结构调整
 
