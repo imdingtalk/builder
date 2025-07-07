@@ -8,7 +8,7 @@ on:
       - '.github/workflows/docker-image.yml'
       - 'vision/Dockerfile'
       -  'MinerU/Dockerfile'
-      - 'mmr'
+      - 'mmr/Dockerfile'
       # 添加更多路径，根据你的目录结构调整
 
 jobs:
